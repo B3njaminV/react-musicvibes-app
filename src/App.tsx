@@ -1,22 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from "react";
+import Navigation from "./navigation/Navigation";
+import {SafeAreaProvider} from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function App() {
   return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <Text style={styles.title}>Mes super Nounours !</Text>
-        </View>
-        <Text>Mon super texte ...</Text>
-      </View>
+      <SafeAreaProvider>
+        <Navigation></Navigation>
+      </SafeAreaProvider>
   )
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "darksalmon",
   },
   centered: {
     alignItems: "center"
