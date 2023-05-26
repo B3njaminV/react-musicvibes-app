@@ -10,18 +10,18 @@ export default function Navigation() {
     const BottomTabNavigator = createBottomTabNavigator();
     return (
         <NavigationContainer>
-            <BottomTabNavigator.Navigator initialRouteName="Library" screenOptions={{ headerShown: false }}>
+            <BottomTabNavigator.Navigator initialRouteName="LibraryTab" screenOptions={{ headerShown: false }}>
                 <BottomTabNavigator.Screen name="Explore" component={ExploreNavigator}
                                            options={{
-                                               title: 'Explore',
+                                               title: 'ExploreTab',
                                                tabBarIcon: ({color}) => <TabBarIcon name="th-large" color={color}/>,
                                            }}/>
                 <BottomTabNavigator.Screen name="Library" component={LibraryNavigator}
                                            options={{
-                                               title: 'Library',
+                                               title: 'LibraryTab',
                                                tabBarIcon: ({color}) => <TabBarIcon name="music" color={color}/>,
                                            }}/>
-                <BottomTabNavigator.Screen name="Search" component={SearchNavigator}
+                <BottomTabNavigator.Screen name="SearchTab" component={SearchNavigator}
                                            options={{
                                                title: 'Search',
                                                tabBarIcon: ({color}) => <TabBarIcon name="search" color={color}/>,
