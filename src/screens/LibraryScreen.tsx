@@ -8,21 +8,21 @@ import AlbumListItem from "../components/AlbumListItem";
 import {ScrollView} from "react-native-gesture-handler";
 
 const MENU_ITEM: LibraryMenu[] = [
-    new LibraryMenu("music", "PlayLists"),
-    new LibraryMenu("users", "Artists"),
-    new LibraryMenu("music", "Albums"),
-    new LibraryMenu("th-large", "Genres"),
+    new LibraryMenu("music", "PlayLists", "PlaylistsFromLibrary"),
+    new LibraryMenu("users", "Artists", "ArtistsFromLibrary"),
+    new LibraryMenu("music", "Albums", "AlbumsFromLibrary"),
+    new LibraryMenu("th-large", "Genres", "GenresFromLibrary"),
 ]
 
 const ALBUMS: Album[] = [
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk')
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk')
 ]
 
 export default function LibraryScreen() {
@@ -34,7 +34,7 @@ export default function LibraryScreen() {
                 <View style={styles.menu_container}>
                     <FlatList data={MENU_ITEM} renderItem={({item}) =>
                         // @ts-ignore
-                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromLibrary")}>
+                        <TouchableOpacity onPress={() => navigation.navigate(item.direction)}>
                             <LibraryMenuItem item={item}/>
                         </TouchableOpacity>
                     }/>
@@ -45,7 +45,7 @@ export default function LibraryScreen() {
                               numColumns={2}
                               renderItem={({item}) =>
                                   // @ts-ignore
-                                  <TouchableOpacity onPress={() => navigation.navigate("AlbumFromLibrary")}>
+                                  <TouchableOpacity onPress={() => navigation.navigate("AlbumFromLibrary", {album: item})}>
                                       <AlbumListItem item={item}/>
                                   </TouchableOpacity>
                               }/>

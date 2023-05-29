@@ -1,14 +1,20 @@
-import {StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, View} from "react-native";
 import React from "react";
+import {useRoute} from "@react-navigation/native";
+import {ScrollView} from "react-native-gesture-handler";
+import AlbumDetail from "../components/AlbumDetail";
 
 export default function AlbumScreen() {
+    const route = useRoute()
+    // @ts-ignore
+    const album = route.params.album
+
     return (
-        <View style={styles.container}>
-            <View style={styles.centered}>
-                <Text style={styles.title}>Album</Text>
+        <ScrollView>
+            <View style={styles.container}>
+                <AlbumDetail item={album}/>
             </View>
-            <Text>Mon super texte ...</Text>
-        </View>
+        </ScrollView>
     )
 }
 
