@@ -1,12 +1,17 @@
 import { Image, StyleSheet, Text, View} from "react-native";
 import React from "react";
+import Album from "../data/Album";
 
-export default function MusicItem({item}: { item: any }) {
+type AlbumListItemProps = {
+    item: Album
+}
+
+export default function AlbumListItem({item}: { item: any }) {
     return (
         <View style={styles.MusicItemContainer}>
-            <Image source={item.image} style={styles.MusicItemImage} />
+            <Image source={item.cover} style={styles.MusicItemImage} />
             <Text style={styles.MusicItemTitle}>{item.title}</Text>
-            <Text style={styles.MusicItemAuthor}>{item.author}</Text>
+            <Text style={styles.MusicItemAuthor}>{item.artistName}</Text>
         </View>
     );
 }
