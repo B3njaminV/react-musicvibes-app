@@ -7,7 +7,7 @@ export default function LibraryNavigator() {
     return (
         <Stack.Navigator initialRouteName="Library">
             <Stack.Screen name="Library" component={LibraryScreen}/>
-            <Stack.Screen name="Album" component={AlbumScreen}/>
+            <Stack.Screen name="AlbumFromLibrary" component={AlbumScreen}/>
         </Stack.Navigator>
     )
 }

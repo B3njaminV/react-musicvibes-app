@@ -1,85 +1,69 @@
-import {FlatList, StyleSheet, Text, View} from "react-native";
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import React from "react";
-import MusicItem from "../components/MusicItem";
+import AlbumListItem from "../components/AlbumListItem";
+import Album from "../data/Album";
+import {useNavigation} from "@react-navigation/native";
+import {ScrollView} from "react-native-gesture-handler";
+
+const ALBUMS: Album[] = [
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
+    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk')
+]
 
 export default function ExploreScreen() {
-
-    const musics = [
-        {
-            id: '1',
-            title: 'Music',
-            subtitle: 'Sous-titre',
-            author: 'Auteur',
-            image: require('../assets/podcast.jpg'),
-        },
-        {
-            id: '',
-            title: 'Music ',
-            subtitle: 'Sous-titre ',
-            author: 'Auteur ',
-            image: require('../assets/podcast.jpg'),
-        },
-        {
-            id: '3',
-            title: 'Music ',
-            subtitle: 'Sous-titre ',
-            author: 'Auteur ',
-            image: require('../assets/podcast.jpg'),
-        },
-        {
-            id: '4',
-            title: 'Music ',
-            subtitle: 'Sous-titre ',
-            author: 'Auteur ',
-            image: require('../assets/podcast.jpg'),
-        },
-        {
-            id: '5',
-            title: 'Music ',
-            subtitle: 'Sous-titre ',
-            author: 'Auteur ',
-            image: require('../assets/podcast.jpg'),
-        },
-        {
-            id: '6',
-            title: 'Music',
-            subtitle: 'Sous-titre',
-            author: 'Auteur',
-            image: require('../assets/podcast.jpg'),
-        },
-    ];
+    const navigation = useNavigation()
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>A découvrir</Text>
-            <FlatList
-                data={musics}
-                keyExtractor={(item) => item.id}
-                horizontal
-                renderItem={MusicItem}
-            />
-            <Text style={styles.title}>Pour toi</Text>
-            <FlatList
-                data={musics}
-                keyExtractor={(item) => item.id}
-                horizontal
-                renderItem={MusicItem}
-            />
-            <Text style={styles.title}>Plus ...</Text>
-            <FlatList
-                data={musics}
-                keyExtractor={(item) => item.id}
-                horizontal
-                renderItem={MusicItem}
-            />
-        </View>
-    );
+        <ScrollView>
+            <View style={styles.container}>
+                <Text style={styles.title}>A découvrir</Text>
+                <FlatList
+                    data={ALBUMS}
+                    keyExtractor={(item) => item.id}
+                    horizontal
+                    renderItem={({item}) =>
+                        // @ts-ignore
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                            <AlbumListItem item={item}/>
+                        </TouchableOpacity>
+                    }/>
+                <Text style={styles.title}>Pour toi</Text>
+                <FlatList
+                    data={ALBUMS}
+                    keyExtractor={(item) => item.id}
+                    horizontal
+                    renderItem={({item}) =>
+                        // @ts-ignore
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                            <AlbumListItem item={item}/>
+                        </TouchableOpacity>
+                    }/>
+                <Text style={styles.title}>Plus ...</Text>
+                <FlatList
+                    data={ALBUMS}
+                    keyExtractor={(item) => item.id}
+                    horizontal
+                    renderItem={({item}) =>
+                        // @ts-ignore
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                            <AlbumListItem item={item}/>
+                        </TouchableOpacity>
+                    }/>
+            </View>
+        </ScrollView>
+    )
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
+        padding: 16
     },
     title: {
         fontSize: 34,
