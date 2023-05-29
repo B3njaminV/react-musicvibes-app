@@ -6,14 +6,14 @@ import {useNavigation} from "@react-navigation/native";
 import {ScrollView} from "react-native-gesture-handler";
 
 const ALBUMS: Album[] = [
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk'),
-    new Album("Alive 2007", require('../assets/podcast.jpg'), 'Daft  Punk')
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
+    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
 ]
 
 export default function ExploreScreen() {
@@ -29,7 +29,7 @@ export default function ExploreScreen() {
                     horizontal
                     renderItem={({item}) =>
                         // @ts-ignore
-                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore", {album: item})}>
                             <AlbumListItem item={item}/>
                         </TouchableOpacity>
                     }/>
@@ -40,7 +40,7 @@ export default function ExploreScreen() {
                     horizontal
                     renderItem={({item}) =>
                         // @ts-ignore
-                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore", {album: item})}>
                             <AlbumListItem item={item}/>
                         </TouchableOpacity>
                     }/>
@@ -51,7 +51,7 @@ export default function ExploreScreen() {
                     horizontal
                     renderItem={({item}) =>
                         // @ts-ignore
-                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("AlbumFromExplore", {album: item})}>
                             <AlbumListItem item={item}/>
                         </TouchableOpacity>
                     }/>

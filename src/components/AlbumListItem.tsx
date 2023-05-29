@@ -6,32 +6,33 @@ type AlbumListItemProps = {
     item: Album
 }
 
-export default function AlbumListItem({item}: { item: any }) {
+export default function AlbumListItem(props: AlbumListItemProps) {
+    const album = props.item
+
     return (
-        <View style={styles.MusicItemContainer}>
-            <Image source={item.cover} style={styles.MusicItemImage} />
-            <Text style={styles.MusicItemTitle}>{item.title}</Text>
-            <Text style={styles.MusicItemAuthor}>{item.artistName}</Text>
+        <View style={styles.container}>
+            <Image source={require('../assets/podcast.jpg')} style={styles.cover}/>
+            <Text style={styles.title}>{album.title}</Text>
+            <Text style={styles.artist}>{album.artistName}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    MusicItemContainer: {
+    container: {
         marginRight: 12,
     },
-    MusicItemImage: {
+    cover: {
         width: 130,
         height: 130,
         borderRadius: 8,
     },
-    MusicItemTitle: {
+    title: {
         marginTop: 8,
         fontWeight: 'bold',
     },
-    MusicItemAuthor: {
+    artist: {
         color: '#666',
     },
-
 });
 
