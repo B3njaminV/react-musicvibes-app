@@ -1,4 +1,4 @@
-import Album from "../data/Album";
+import Album from "../model/Album";
 import {Image, StyleSheet, Text, View} from "react-native";
 
 type AlbumDetailProps = {

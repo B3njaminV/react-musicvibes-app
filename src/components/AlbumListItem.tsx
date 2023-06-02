@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View} from "react-native";
 import React from "react";
-import Album from "../data/Album";
+import Album from "../model/Album";
 
 type AlbumListItemProps = {
     item: Album

@@ -1,29 +1,11 @@
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import React from "react";
 import LibraryMenuItem from "../components/LibraryMenuItem";
-import LibraryMenu from "../data/LibraryMenu";
 import {useNavigation} from "@react-navigation/native";
-import Album from "../data/Album";
 import AlbumListItem from "../components/AlbumListItem";
 import {ScrollView} from "react-native-gesture-handler";
-
-const MENU_ITEM: LibraryMenu[] = [
-    new LibraryMenu("music", "PlayLists", "PlaylistsFromLibrary"),
-    new LibraryMenu("users", "Artists", "ArtistsFromLibrary"),
-    new LibraryMenu("music", "Albums", "AlbumsFromLibrary"),
-    new LibraryMenu("th-large", "Genres", "GenresFromLibrary"),
-]
-
-const ALBUMS: Album[] = [
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album("Alive 2007", '../assets/podcast.jpg', 'Daft  Punk')
-]
+import {ALBUMS, MENU_ITEM} from "../data/stub";
+import {ALBUM_FROM_LIBRARY} from "../navigation/constants";
 
 export default function LibraryScreen() {
     const navigation = useNavigation()
@@ -45,7 +27,7 @@ export default function LibraryScreen() {
                               numColumns={2}
                               renderItem={({item}) =>
                                   // @ts-ignore
-                                  <TouchableOpacity onPress={() => navigation.navigate("AlbumFromLibrary", {album: item})}>
+                                  <TouchableOpacity onPress={() => navigation.navigate(ALBUM_FROM_LIBRARY, {album: item})}>
                                       <AlbumListItem item={item}/>
                                   </TouchableOpacity>
                               }/>
