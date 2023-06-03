@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View} from "react-native";
-import LibraryMenu from "../data/LibraryMenu";
+import LibraryMenu from "../model/LibraryMenu";
 import {FontAwesome} from "@expo/vector-icons";
 
 type LibraryMenuItemProps = {
