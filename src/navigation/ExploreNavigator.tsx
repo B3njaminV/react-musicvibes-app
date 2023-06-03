@@ -7,8 +7,8 @@ export default function ExploreNavigator() {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator initialRouteName={EXPLORE_SCREEN}>
-            <Stack.Screen name={EXPLORE_SCREEN} component={ExploreScreen}/>
-            <Stack.Screen name={ALBUM_FROM_EXPLORE} component={AlbumScreen}/>
+            <Stack.Screen name={EXPLORE_SCREEN} component={ExploreScreen} options={{title: "Explore"}}/>
+            <Stack.Screen name={ALBUM_FROM_EXPLORE} component={AlbumScreen} options={{title: "Album"}}/>
         </Stack.Navigator>
     )
 }

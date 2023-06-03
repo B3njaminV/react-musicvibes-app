@@ -20,7 +20,7 @@ export default function AlbumListItem(props: AlbumListItemProps) {
 
 const styles = StyleSheet.create({
     container: {
-        marginRight: 12,
+        margin: 10,
     },
     cover: {
         width: 130,

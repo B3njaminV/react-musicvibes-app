@@ -1,14 +1,21 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Button, FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {PLAYLISTS} from "../data/stub";
-import LibraryMenuItem from "../components/LibraryMenuItem";
-import React from "react";
+import React, {useEffect} from "react";
 import PlaylistListItem from "../components/PlaylistListItem";
 import {useNavigation} from "@react-navigation/native";
-import {PLAYLIST_FROM_LIBRARY} from "../navigation/constants";
+import {PLAYLIST_ADD_EDIT, PLAYLIST_FROM_LIBRARY} from "../navigation/constants";
 
 export default function PlaylistsScreen() {
     const navigation = useNavigation()
 
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                // @ts-ignore
+                <Button onPress={() => navigation.navigate(PLAYLIST_ADD_EDIT)} title="Add"/>
+            ),
+        })
+    }, [navigation])
 
     return (
         <View style={styles.container}>

@@ -10,5 +10,7 @@ export const PLAYLIST_FROM_LIBRARY = "PlaylistFromLibrary"
 export const ARTISTS_FROM_LIBRARY = "ArtistsFromLibrary"
 export const ALBUMS_FROM_LIBRARY = "AlbumsFromLibrary"
 export const GENRES_FROM_LIBRARY = "GenresFromLibrary"
+export const PLAYLIST_ADD_EDIT = "PlaylistAddEdit"
 
 // Search
+export const SEARCH_SCREEN = "SearchScreen"

@@ -5,9 +5,11 @@ export class Playlist {
     readonly id: string = uuid()
 
     name: string
+    desc: string
     songs: Song[] = []
 
-    constructor(name: string) {
+    constructor(name: string, desc : string) {
         this.name = name
+        this.desc = desc
     }
 }

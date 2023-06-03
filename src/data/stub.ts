@@ -27,12 +27,12 @@ export const ALBUMS: Album[] = [
 ]
 
 export const PLAYLISTS: Playlist[] = [
-    new Playlist("Motivations"),
-    new Playlist("Sport"),
-    new Playlist("Motivations"),
-    new Playlist("Motivations"),
-    new Playlist("Motivations"),
-    new Playlist("Motivations"),
-    new Playlist("Motivations"),
-    new Playlist("Motivations"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Sport", "A description"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Motivations", "A description"),
+    new Playlist("Motivations", "A description"),
 ]
