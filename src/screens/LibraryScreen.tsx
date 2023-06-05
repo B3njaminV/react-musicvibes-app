@@ -3,7 +3,7 @@ import React from "react";
 import LibraryMenuItem from "../components/LibraryMenuItem";
 import {useNavigation} from "@react-navigation/native";
 import AlbumListItem from "../components/AlbumListItem";
-import {ALBUMS, MENU_ITEM} from "../data/stub";
+import {ALBUMS, MENU_ITEM} from "../data/Stub";
 import {ALBUM_FROM_LIBRARY} from "../navigation/constants";
 
 export default function LibraryScreen() {

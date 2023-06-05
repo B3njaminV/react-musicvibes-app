@@ -1,5 +1,5 @@
 import {Button, FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {PLAYLISTS} from "../data/stub";
+import {PLAYLISTS} from "../data/Stub";
 import React, {useEffect} from "react";
 import PlaylistListItem from "../components/PlaylistListItem";
 import {useNavigation} from "@react-navigation/native";

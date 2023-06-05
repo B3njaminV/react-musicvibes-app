@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import React from "react";
 import Navigation from "./navigation/Navigation";
 import {SafeAreaProvider} from "react-native-safe-area-context";
-
+import store from "./redux/store";
 export default function App() {
   return (
       <SafeAreaProvider>

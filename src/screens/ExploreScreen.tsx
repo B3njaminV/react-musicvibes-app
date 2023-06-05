@@ -3,7 +3,7 @@ import React from "react";
 import AlbumListItem from "../components/AlbumListItem";
 import {useNavigation} from "@react-navigation/native";
 import {ScrollView} from "react-native-gesture-handler";
-import {ALBUMS} from "../data/stub";
+import {ALBUMS} from "../data/Stub";
 import {ALBUM_FROM_EXPLORE} from "../navigation/constants";
 
 export default function ExploreScreen() {
