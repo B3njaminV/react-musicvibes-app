@@ -1,13 +1,26 @@
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import React from "react";
+import React, {useEffect} from "react";
 import LibraryMenuItem from "../components/LibraryMenuItem";
 import {useNavigation} from "@react-navigation/native";
 import AlbumListItem from "../components/AlbumListItem";
-import {ALBUMS, MENU_ITEM} from "../data/Stub";
+import {LIBRARY_ALBUMS, MENU_ITEM} from "../data/Stub";
 import {ALBUM_FROM_LIBRARY} from "../navigation/constants";
+import {useSelector, useDispatch} from "react-redux";
+import {setLibraryAlbumList} from "../redux/actions/setLibraryAlbumList";
 
 export default function LibraryScreen() {
     const navigation = useNavigation()
+    const dispatch = useDispatch()
+
+    // @ts-ignore
+    const libraryAlbums = useSelector(state => state.appReducer.libraryAlbums)
+
+    useEffect(() => {
+        const loadLibraryAlbums = () => {
+            dispatch(setLibraryAlbumList(LIBRARY_ALBUMS));
+        };
+        loadLibraryAlbums();
+    }, [dispatch]);
 
     return (
         <View style={styles.container}>
@@ -21,7 +34,7 @@ export default function LibraryScreen() {
             </View>
             <View style={styles.albums_container}>
                 <Text style={styles.title}> Latest add </Text>
-                <FlatList data={ALBUMS}
+                <FlatList data={libraryAlbums}
                           numColumns={2}
                           horizontal={false}
                           contentContainerStyle={{alignItems: 'center'}}

@@ -1,12 +1,11 @@
-import { v4 as uuid } from 'uuid';
-
 export default class Song {
-    readonly id: string = uuid();
+    readonly id: string;
 
     name: string
     duration: number
 
-    constructor(name: string, duration: number) {
+    constructor(id : string, name: string, duration: number) {
+        this.id = id;
         this.name = name;
         this.duration = duration
     }

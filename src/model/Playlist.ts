@@ -1,14 +1,14 @@
-import { v4 as uuid } from 'uuid';
 import Song from "./Song";
 
 export class Playlist {
-    readonly id: string = uuid()
+    readonly id: string
 
     name: string
     desc: string
     songs: Song[] = []
 
-    constructor(name: string, desc : string) {
+    constructor(id: string, name: string, desc : string) {
+        this.id = id
         this.name = name
         this.desc = desc
     }

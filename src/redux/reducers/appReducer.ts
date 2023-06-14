@@ -1,17 +1,21 @@
-import {LIST_ALBUMS} from "../constants";
+import {ADD_PLAYLIST, LIBRARY_ALBUMS, PLAYLISTS_LIST} from "../constants";
 
 const initialState = {
-    musics: [],
-    favoriteMusics: [],
+    libraryAlbums: [],
+    libraryPlaylists: [],
 }
 
 // @ts-ignore
 export default appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LIST_ALBUMS:
+        case LIBRARY_ALBUMS:
+            return {...state, libraryAlbums: action.payload}
+        case PLAYLISTS_LIST:
+            return {...state, libraryPlaylists: action.payload};
+        case ADD_PLAYLIST:
             // @ts-ignore
-            state.favoriteMusics.push(action.nounours)
-            return {...state};
+            state.libraryPlaylists.push(action.addedLibraryPlaylist)
+            return {...state}
         default:
             return state;
     }
