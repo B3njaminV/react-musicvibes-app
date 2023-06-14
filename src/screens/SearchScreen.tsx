@@ -1,6 +1,7 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import React, { useState } from "react";
 import SearchByGenre from "../components/SearchByGenre"
+import SearchByName from "../components/SearchByName";
 
 export default function SearchScreen() {
 
@@ -16,7 +17,7 @@ export default function SearchScreen() {
         placeholder="Search here ..."
       />
       { SearchValue.length==0 && <SearchByGenre /> }
-
+      { SearchValue.length>0 && <SearchByName /> }
         
         </>
     )
