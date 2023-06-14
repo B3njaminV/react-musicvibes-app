@@ -1,12 +1,25 @@
 import {Button, FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {PLAYLISTS} from "../data/Stub";
+import {LIBRARY_PLAYLISTS} from "../data/Stub";
 import React, {useEffect} from "react";
 import PlaylistListItem from "../components/PlaylistListItem";
 import {useNavigation} from "@react-navigation/native";
 import {PLAYLIST_ADD_EDIT, PLAYLIST_FROM_LIBRARY} from "../navigation/constants";
+import {useDispatch, useSelector} from "react-redux";
+import {setPlaylistsList} from "../redux/actions/setPlaylistsList";
 
 export default function PlaylistsScreen() {
     const navigation = useNavigation()
+    const dispatch = useDispatch()
+
+    // @ts-ignore
+    const libraryPlaylists = useSelector(state => state.appReducer.libraryPlaylists)
+
+    useEffect(() => {
+        const loadLibraryPlaylists = () => {
+            dispatch(setPlaylistsList(LIBRARY_PLAYLISTS))
+        };
+        loadLibraryPlaylists();
+    }, [dispatch])
 
     useEffect(() => {
         navigation.setOptions({
@@ -19,7 +32,7 @@ export default function PlaylistsScreen() {
 
     return (
         <View style={styles.container}>
-            <FlatList data={PLAYLISTS}
+            <FlatList data={libraryPlaylists}
                       renderItem={({item}) =>
                 // @ts-ignore
                 <TouchableOpacity onPress={() => navigation.navigate(PLAYLIST_FROM_LIBRARY)}>

@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+
 
 export default class Album {
     readonly id: string;
@@ -6,8 +6,8 @@ export default class Album {
     cover: string;
     artistName: string;
 
-    constructor(title: string, cover: string, artistName: string) {
-        this.id = uuid();
+    constructor(id: string, title: string, cover: string, artistName: string) {
+        this.id = id;
         this.title = title;
         this.cover = cover;
         this.artistName  = artistName;
