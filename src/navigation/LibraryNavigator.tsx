@@ -20,41 +20,50 @@ export default function LibraryNavigator() {
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator initialRouteName={LIBRARY_SCREEN}>
-            <Stack.Screen name={LIBRARY_SCREEN}
-                          component={LibraryScreen}
-                          options={{title: "Library"}}/>
+            <Stack.Group>
+                <Stack.Screen name={LIBRARY_SCREEN}
+                              component={LibraryScreen}
+                              options={{title: "Library"}}/>
 
-            <Stack.Screen name={ALBUM_FROM_LIBRARY}
-                          component={AlbumScreen}
-                          options={{title: "Album"}}/>
+                <Stack.Screen name={ALBUM_FROM_LIBRARY}
+                              component={AlbumScreen}
+                              options={{title: "Album"}}/>
 
-            <Stack.Screen name={ALBUMS_FROM_LIBRARY}
-                          component={AlbumsScreen}
-                          options={{title: "Albums"}}/>
+                <Stack.Screen name={ALBUMS_FROM_LIBRARY}
+                              component={AlbumsScreen}
+                              options={{title: "Albums"}}/>
 
-            <Stack.Screen name={ARTISTS_FROM_LIBRARY}
-                          component={ArtistsScreen}
-                          options={{title: "Artists"}}/>
+                <Stack.Screen name={ARTISTS_FROM_LIBRARY}
+                              component={ArtistsScreen}
+                              options={{title: "Artists"}}/>
 
-            <Stack.Screen name={GENRES_FROM_LIBRARY}
-                          component={GenresScreen}
-                          options={{title: "Genres"}}/>
+                <Stack.Screen name={GENRES_FROM_LIBRARY}
+                              component={GenresScreen}
+                              options={{title: "Genres"}}/>
 
-            <Stack.Screen name={PLAYLISTS_FROM_LIBRARY}
-                          component={PlaylistsScreen}
-                          options={() => ({
-                              title: "Playlists",
-                              headerRight: () => (
-                                  <Button title="Add" />
-                              ),
-                          })}/>
+                <Stack.Screen name={PLAYLISTS_FROM_LIBRARY}
+                              component={PlaylistsScreen}
+                              options={() => ({
+                                  title: "Playlists",
+                                  headerRight: () => (
+                                      <Button title="Add" />
+                                  ),
+                              })}/>
 
-            <Stack.Screen name={PLAYLIST_FROM_LIBRARY}
-                          component={PlaylistScreen}/>
+                <Stack.Screen name={PLAYLIST_FROM_LIBRARY}
+                              component={PlaylistScreen}/>
+            </Stack.Group>
 
-            <Stack.Screen name={PLAYLIST_ADD_EDIT}
-                          component={PlaylistAddEditScreen}
-                          options={{title: "Add a playlist"}}/>
+            <Stack.Group screenOptions={{presentation: "modal"}}>
+                <Stack.Screen name={PLAYLIST_ADD_EDIT}
+                              component={PlaylistAddEditScreen}
+                              options={() => ({
+                                  title: "Add a playlist",
+                                  headerRight: () => (
+                                      <Button title="Save"/>
+                                  ),
+                              })}/>
+            </Stack.Group>
         </Stack.Navigator>
     )
 }

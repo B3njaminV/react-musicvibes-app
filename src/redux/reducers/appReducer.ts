@@ -14,8 +14,11 @@ export default appReducer = (state = initialState, action) => {
             return {...state, libraryPlaylists: action.payload};
         case ADD_PLAYLIST:
             // @ts-ignore
-            state.libraryPlaylists.push(action.addedLibraryPlaylist)
-            return {...state}
+
+            return {
+                ...state,
+                libraryPlaylists: [...state.libraryPlaylists, action.playlist]
+            }
         default:
             return state;
     }
