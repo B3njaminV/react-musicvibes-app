@@ -17,6 +17,9 @@
 
 ## ‍🖼️ Screenshots
 
+| Explore Screen | Library Screen | Search Screen |
+| -- | -- | -- |
+| <img src="./.github/explore-screen.png" width="225" height="500"> | <img src="./.github/library-screen.png" width="225" height="500"> | <img src="./.github/search-screen.png" width="225" height="500"> | 
 
 ## ‍💻 Projet 
 
@@ -26,11 +29,39 @@
 git clone https://codefirst.iut.uca.fr/git/benjamin.valleix/react-music-app.git
 ```
 
+*Lancer le projet*
+
+```sh
+npm run ios => Launch on iOS emulator
+npm run android => Launch on Android emulator
+npm run web => Launch on web browser
+```
+
+*Lancer les tests*
+
+```sh
+npm test
+```
+
 ## ⚙️ Roadmap
 
-:white_check_mark: Tache 1
+:white_check_mark: Navigation
 
-:arrow_right: Tache 2
+:white_check_mark: Redux Store
+
+:white_check_mark: Display list of items
+
+:x: Display dynamic image
+
+:white_check_mark: Binding child component props 
+
+:white_check_mark: Handle a TextInput correctly (in playist add screen)
+
+:x: Retrieve data using the Web API
+
+:x: Store favorite data into phone storage 
+
+:white_check_mark: Write Tests 
 
 ## ✍️ Author
 
@@ -52,7 +83,6 @@ git clone https://codefirst.iut.uca.fr/git/benjamin.valleix/react-music-app.git
 ## 📝 License
 
 Copyright © 2023
-
 
 ## 🛠 Languages & Tools
 
