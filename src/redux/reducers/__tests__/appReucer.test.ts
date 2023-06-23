@@ -14,7 +14,7 @@ describe('test reducer', () => {
         expect(appReducer(undefined, {})).toEqual(initialState);
     });
 
-    it('should handle ADD_FAVORITE_NOUNOURS', () => {
+    it('should handle ADD_PLAYLIST', () => {
         const playlist = new Playlist(uuid(), "Sports", "Playlist to do sports")
         expect(
             appReducer(initialState, {
