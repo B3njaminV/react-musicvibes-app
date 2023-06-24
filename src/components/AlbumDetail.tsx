@@ -11,8 +11,9 @@ export default function AlbumDetail(props: AlbumDetailProps) {
 
     return (
         <View style={styles.container}>
-            <Image source={{uri: ALBUM_COVER_LINK}} style={styles.cover}/>
-            <Text style={styles.title}> {album.title} </Text>
+            <Image testID="album-cover" source={{uri: ALBUM_COVER_LINK}} style={styles.cover}/>
+            <Text testID="album-title" style={styles.title}> {album.title} </Text>
+            <Text testID="album-artist" style={styles.title}> {album.artistName} </Text>
         </View>
     )
 }

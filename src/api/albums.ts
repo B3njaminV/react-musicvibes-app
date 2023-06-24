@@ -1,6 +1,6 @@
 import Album from "../model/Album";
 import {setLibraryAlbumList} from "../redux/actions/setLibraryAlbumList";
-import {LIBRARY_ALBUMS} from "../data/Stub";
+import {LIBRARY_ALBUMS} from "../data/stub";
 
 export const getLibraryAlbums = () => {
     // @ts-ignore

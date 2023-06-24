@@ -19,26 +19,26 @@ export const MENU_ITEM: LibraryMenu[] = [
 ]
 
 export const ALBUMS: Album[] = [
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk')
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk')
 ]
 
 
 export const LIBRARY_ALBUMS: Album[] = [
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk'),
-    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft  Punk')
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk'),
+    new Album(uuid(), "Alive 2007", '../assets/podcast.jpg', 'Daft Punk')
 ]
 
 export const LIBRARY_PLAYLISTS: Playlist[] = [
