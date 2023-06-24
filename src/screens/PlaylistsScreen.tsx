@@ -6,6 +6,7 @@ import {useNavigation} from "@react-navigation/native";
 import {PLAYLIST_ADD_EDIT, PLAYLIST_FROM_LIBRARY} from "../navigation/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {setPlaylistsList} from "../redux/actions/setPlaylistsList";
+import {getLibraryPlaylists} from "../api/playlist";
 
 export default function PlaylistsScreen() {
     const navigation = useNavigation()
@@ -15,8 +16,9 @@ export default function PlaylistsScreen() {
     const libraryPlaylists = useSelector(state => state.appReducer.libraryPlaylists)
 
     useEffect(() => {
-        const loadLibraryPlaylists = () => {
-            dispatch(setPlaylistsList(LIBRARY_PLAYLISTS))
+        const loadLibraryPlaylists = async () => {
+            // @ts-ignore
+            await dispatch(getLibraryPlaylists())
         };
         loadLibraryPlaylists();
     }, [dispatch])
