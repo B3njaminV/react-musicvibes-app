@@ -6,7 +6,7 @@ import AlbumListItem from "../components/AlbumListItem";
 import {LIBRARY_ALBUMS, MENU_ITEM} from "../data/Stub";
 import {ALBUM_FROM_LIBRARY} from "../navigation/constants";
 import {useSelector, useDispatch} from "react-redux";
-import {setLibraryAlbumList} from "../redux/actions/setLibraryAlbumList";
+import {getLibraryAlbums} from "../api/albums";
 
 export default function LibraryScreen() {
     const navigation = useNavigation()
@@ -16,8 +16,9 @@ export default function LibraryScreen() {
     const libraryAlbums = useSelector(state => state.appReducer.libraryAlbums)
 
     useEffect(() => {
-        const loadLibraryAlbums = () => {
-            dispatch(setLibraryAlbumList(LIBRARY_ALBUMS));
+        const loadLibraryAlbums = async () => {
+            // @ts-ignore
+            await dispatch(getLibraryAlbums());
         };
         loadLibraryAlbums();
     }, [dispatch]);
