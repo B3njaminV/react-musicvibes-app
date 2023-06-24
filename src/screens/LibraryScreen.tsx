@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import LibraryMenuItem from "../components/LibraryMenuItem";
 import {useNavigation} from "@react-navigation/native";
 import AlbumListItem from "../components/AlbumListItem";
-import {LIBRARY_ALBUMS, MENU_ITEM} from "../data/Stub";
+import {LIBRARY_ALBUMS, MENU_ITEM} from "../data/stub";
 import {ALBUM_FROM_LIBRARY} from "../navigation/constants";
 import {useSelector, useDispatch} from "react-redux";
 import {getLibraryAlbums} from "../api/albums";

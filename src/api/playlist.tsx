@@ -1,4 +1,4 @@
-import {LIBRARY_PLAYLISTS} from "../data/Stub";
+import {LIBRARY_PLAYLISTS} from "../data/stub";
 import {Playlist} from "../model/Playlist";
 import {setPlaylistsList} from "../redux/actions/setPlaylistsList";
 

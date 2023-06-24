@@ -1,5 +1,5 @@
 import {describe, expect, it} from "@jest/globals";
-import {LIBRARY_ALBUMS as LIBRARY_ALBUMS_STUB} from "../../../data/Stub";
+import {LIBRARY_ALBUMS as LIBRARY_ALBUMS_STUB} from "../../../data/stub";
 import {setLibraryAlbumList} from "../setLibraryAlbumList";
 import {LIBRARY_ALBUMS} from "../../constants";
 

@@ -3,7 +3,7 @@ import {Playlist} from "../../../model/Playlist";
 import {ADD_PLAYLIST, PLAYLISTS_LIST} from "../../constants";
 import {setPlaylistAdd} from "../setPlaylistAdd";
 import { v4 as uuid } from 'uuid';
-import {LIBRARY_PLAYLISTS} from "../../../data/Stub";
+import {LIBRARY_PLAYLISTS} from "../../../data/stub";
 import {setPlaylistsList} from "../setPlaylistsList";
 
 describe('test actions', () => {
