@@ -1,6 +1,7 @@
 import {Playlist} from "../model/Playlist";
 import {Image, StyleSheet, Text, View} from "react-native";
 import React from "react";
+import {PLAYLIST_COVER_LINK} from "./constants";
 
 type PlaylistListItemProps = {
     item: Playlist
@@ -11,7 +12,7 @@ export default function PlaylistListItem(props: PlaylistListItemProps) {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/podcast.jpg')} style={styles.coverSize}/>
+            <Image source={{uri: PLAYLIST_COVER_LINK}} style={styles.coverSize}/>
             <Text> {playlist.name} </Text>
         </View>
     )
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     },
 
     coverSize: {
-       width: 50,
-       height: 50,
+       width: 65,
+       height: 65,
     }
 })
