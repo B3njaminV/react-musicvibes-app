@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View} from "react-native";
 import React from "react";
 import Album from "../model/Album";
+import {ALBUM_COVER_LINK} from "./constants";
 
 type AlbumListItemProps = {
     item: Album
@@ -11,7 +12,7 @@ export default function AlbumListItem(props: AlbumListItemProps) {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/podcast.jpg')} style={styles.cover}/>
+            <Image source={{uri: ALBUM_COVER_LINK}} style={styles.cover}/>
             <Text style={styles.title}>{album.title}</Text>
             <Text style={styles.artist}>{album.artistName}</Text>
         </View>
