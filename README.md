@@ -51,7 +51,7 @@ npm test
 
 :white_check_mark: Display list of items
 
-:x: Display dynamic image
+:white_check_mark: Display dynamic image
 
 :white_check_mark: Binding child component props 
 
